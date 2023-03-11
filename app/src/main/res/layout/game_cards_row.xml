@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp"
+    android:layout_marginBottom="2dp">
+
+
+    <TextView
+        android:id="@+id/game_id_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="game id"
+        android:textAlignment="gravity"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player_one_name_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="player name"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/game_id_text"
+        app:layout_constraintStart_toEndOf="@+id/game_id_text" />
+
+    <TextView
+        android:id="@+id/player_one_dices_throw_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="dices throw"
+        android:textAlignment="textEnd"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/player_one_name_text"
+        app:layout_constraintStart_toEndOf="@+id/player_one_name_text" />
+
+    <TextView
+        android:id="@+id/player_one_result_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="result"
+        app:layout_constraintBaseline_toBaselineOf="@+id/player_one_dices_throw_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/player_one_dices_throw_text" />
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView4"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="00"-->
+    <!--        android:textAlignment="gravity"-->
+    <!--        android:visibility="invisible"-->
+    <!--        app:layout_constraintBaseline_toBaselineOf="@+id/player_two_name_text"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/player_two_name_text"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+
+
+    <!--    <TextView-->
+<!--        android:id="@+id/player_one_game_type_text"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="game type"-->
+<!--        android:textAlignment="viewEnd"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/game_id_text"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/game_id_text"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/game_id_text"-->
+<!--        app:layout_constraintVertical_bias="0.0" />-->
+
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/player_two_name_text"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="player name"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/player_two_dices_throw_text"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView4" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/player_two_dices_throw_text"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="dices throw"-->
+<!--        android:textAlignment="textEnd"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/player_two_name_text"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/player_two_result_text"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/player_two_name_text" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/player_two_result_text"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="1dp"-->
+<!--        android:layout_marginRight="1dp"-->
+<!--        android:text="result"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/player_two_dices_throw_text"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/player_two_game_type_text"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/player_two_dices_throw_text" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/player_two_game_type_text"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="game type"-->
+<!--        android:textAlignment="textEnd"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/player_two_result_text"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/player_two_result_text" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

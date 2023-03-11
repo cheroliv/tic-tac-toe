@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+
+    <Button
+        android:id="@+id/play_local_button"
+        android:layout_width="567dp"
+        android:layout_height="48dp"
+        android:text="@string/play_local"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/player_one_first_dice"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="TODO"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/dice_face_one" />
+
+
+    <ImageView
+        android:id="@+id/player_one_middle_dice"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="208dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="@+id/player_one_first_dice"
+        app:layout_constraintStart_toEndOf="@+id/player_one_first_dice"
+        app:layout_constraintTop_toTopOf="@+id/player_one_first_dice"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/dice_face_one" />
+
+    <ImageView
+        android:id="@+id/player_one_last_dice"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="150dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="@+id/player_one_middle_dice"
+        app:layout_constraintEnd_toEndOf="@+id/local_player_result"
+        app:layout_constraintHorizontal_bias="0.964"
+        app:layout_constraintStart_toEndOf="@+id/player_one_middle_dice"
+        app:layout_constraintTop_toTopOf="@+id/player_one_middle_dice"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/dice_face_one" />
+
+    <ImageView
+        android:id="@+id/player_two_first_dice"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@drawable/dice_face_one" />
+
+    <ImageView
+        android:id="@+id/player_two_middle_dice"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="208dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player_two_first_dice"
+        app:layout_constraintStart_toEndOf="@+id/player_two_first_dice"
+        app:layout_constraintTop_toTopOf="@+id/player_two_first_dice"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/dice_face_one" />
+
+    <ImageView
+        android:id="@+id/player_two_last_dice"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/player_two_middle_dice"
+        app:layout_constraintEnd_toEndOf="@+id/player_one_last_dice"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/player_two_middle_dice"
+        app:layout_constraintTop_toTopOf="@+id/player_two_middle_dice"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/dice_face_one" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player"
+        app:layout_constraintStart_toStartOf="@+id/play_local_button"
+        app:layout_constraintTop_toBottomOf="@+id/play_local_button" />
+
+    <TextView
+        android:id="@+id/local_player_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="204dp"
+        android:text="@string/player_result"
+        android:visibility="invisible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/play_local_button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/computer"
+        app:layout_constraintStart_toStartOf="@+id/player_one_first_dice"
+        app:layout_constraintTop_toBottomOf="@+id/player_one_first_dice" />
+
+    <TextView
+        android:id="@+id/computer_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/computer_result"
+        android:visibility="invisible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/local_player_result"
+        app:layout_constraintHorizontal_bias="0.995"
+        app:layout_constraintStart_toEndOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/result_table_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/stats"
+        app:layout_constraintEnd_toEndOf="@+id/player_two_last_dice"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/player_two_first_dice"
+        app:layout_constraintTop_toBottomOf="@+id/player_two_middle_dice" />
+
+    <Button
+        android:id="@+id/signin_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/signin"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/result_table_button"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/result_table_button"
+        app:layout_constraintTop_toBottomOf="@+id/result_table_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

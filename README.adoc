@@ -1,0 +1,173 @@
+= Jeu de Cee Lo
+
+== Playstore
+https://play.google.com/store/apps/details?id=game.ceelo[game.ceelo]
+
+== Essayez le cee-lo.
+C'est un jeu populaire lors duquel chaque joueur possède trois dés, +
+en général dans une sorte de verre et chaque joueur lance les dés +
+en même temps après avoir parié. +
+Le but est d'obtenir le score le plus élevé possible, +
+même si le comptage des points fonctionne un peu comme au poker. +
+La combinaison la plus élevée possible et 4, 5 et 6. +
+Cela représente le royal flush du poker. +
+En suivant, la combinaison la plus élevée est un triple. +
+Même si vous n'avez lancé que des 1, +
+un triple 1 représente la catégorie de score le plus élevé qui ne peut être battue +
+que par un triple d'un autre chiffre ou par un 4, un 5 et un 6. +
+La combinaison gagnante suivante est appelée une paire et une réserve, +
+une sorte de full house. +
+Elle est composée d'une paire de dés correspondants + tout autre valeur. +
+Au cas où deux joueurs ont obtenu un double 4, +
+la valeur la plus élevée du troisième dé indiquera qui est le gagnant. +
+Si un joueur a lancé un double 2 et un 6 +
+alors qu'un autre joueur a lancé un double 6 et un 2, le premier joueur gagne. +
+Le gagnant est désigné par rapport à la valeur du troisième dé +
+et non pas par rapport à la valeur de la paire. +
+Si deux joueurs ont obtenu exactement la même combinaison, ils doivent rejouer. +
+  +
+voir aussi : https://en.wikipedia.org/wiki/Cee-lo[wiki cee-lo]
+
+=== core features(TODO)
+
+. authentication
+. login
+. signup
+. activate
+. change password
+. oauth2 socials
+. payement
+
+=== Developpement stack
+
+. Koin
+. Room
+. Retrofit
+
+
+=== Test Driven Developpement
+
+==== Tests Unitaires sur le métier :
+. `Si le jet est correct alors la propriété dicesThrow renvoi un triplet d'entier entre 1 et 6`
+
+. `Si le jet contient (4,5,6) alors la propriété is456 renvoi true`
+
+. `Si le jet ne contient pas (4,5,6) alors la propriété is456 renvoi false`
+
+. `Si le jet contient (1,2,3) alors la propriété is123 renvoi true`
+
+. `Si le jet ne contient pas (1,2,3) alors la propriété is123 renvoi false`
+
+. `Si le jet est un triplet uniforme alors la propriété isUniformTriplet renvoi un true`
+
+. `Si le jet est un triplet uniforme alors la propriété uniformTripletValue renvoi la valeur facial du dé`
+
+. `Si le jet comporte un doublet uniforme alors la propriété isUniformDoublet renvoi un true`
+
+. `Si le jet comporte un doublet uniforme alors la propriété uniformDoubletValue renvoi la valeur facial du dé non uniforme`
+
+. `Si le jet ne comporte pas uniquement un doublet uniforme alors la propriété uniformDoubletValue renvoi la valeur NOT_A_DOUBLET`
+
+. `Si le jet contient (2,3,4) ou (3,4,5) alors la propriété isStraight renvoi true`
+
+. `Si le jet ne contient pas (2,3,4) ou (3,4,5) alors la propriété isStraight renvoi false`
+
+. `Si le jet contient (4,5,6) alors la propriété whichCase renvoi AUTOMATIC_WIN_456_CASE`
+
+. `Si le jet contient (1,2,3) alors la propriété whichCase renvoi AUTOMATIC_LOOSE_123_CASE`
+
+. `Si le jet contient (2,3,4) ou (3,4,5) alors la propriété whichCase renvoi STRAIGHT_234_345_CASE`
+
+. `Si le jet contient un triplet uniforme alors la propriété whichCase renvoi TRIPLET_CASE`
+
+. `Si le jet contient un doublet uniforme uniquement alors la propriété whichCase renvoi DOUBLET_CASE`
+
+. `Si le jet ne contient ni (4,5,6) ni (1,2,3) ni triplet uniforme ni doublet uniforme alors la propriété whichCase renvoi OTHERS_CASE`
+
+. `Si le jet contient (4,5,6) et l'autre (1,2,3) alors la propriété compareThrows renvoi WIN`
+
+. `Si le jet contient (4,5,6) non ordonné et l'autre (1,2,3) alors la propriété compareThrows renvoi WIN`
+
+. `Si le jet contient (4,5,6) et l'autre aussi alors la propriété compareThrows renvoi RETHROW`
+
+. `Si le jet contient (1,2,3) et l'autre (4,5,6) alors la propriété compareThrows renvoi LOOSE`
+
+. `Si le jet contient (1,2,3) non ordonné et l'autre non alors la propriété compareThrows renvoi LOOSE`
+
+. `Si le jet contient (1,2,3) et l'autre aussi alors la propriété compareThrows renvoi RETHROW`
+
+. `Si le jet est un triplet uniforme et l'autre aussi avec une face plus faible alors la méthode onSameCase renvoi WIN`
+
+. `Si le jet est un triplet uniforme et l'autre aussi avec une face plus faible alors la propriété compareThrows renvoi WIN`
+
+. `Si le jet est un triplet uniforme et l'autre aussi avec une face plus forte alors la propriété compareThrows renvoi LOOSE`
+
+. `Si le jet est un triplet uniforme et l'autre aussi avec la meme face alors la propriété compareThrows renvoi RETHROW`
+
+==== Tests instrumentés (fonctionnels)
+
+===== CeeloService (CeeloServiceInstrumentedTest):
+. `localDicesThrow_retourne_un_jeux_de_jet_de_dès_correct`
+. `allGames_retourne_toutes_les_parties_et_sont_correct`
+. `saveGame_ajoute_une_partie`
+
+
+
+== Environement
+
+=== Installer de l'environement de dev
+
+==== curl, sdkman, java 11, android-studio
+
+_curl_
+[source,bash]
+----
+sudo snap remove curl
+sudo apt install curl
+----
+
+_java & gradle_
+[source,bash]
+----
+curl -s "https://get.sdkman.io" | bash
+sdk i java 11.0.18-tem
+sdk i gradle
+----
+
+_android-studio_
+[source,bash]
+----
+sudo snap install android-studio --classic
+----
+
+
+=== Architecture du projet
+------------------------------------------------------------ +
+Root project 'CeeLoGame' +
+------------------------------------------------------------ +
+
+Root project 'CeeLoGame' +
++--- Project ':app' +
+\--- Project ':domain' +
+
+=== Executer le domain metier
+
+[source,bash]
+----
+./gradlew :domain:run
+----
+
+=== Tester le domain metier
+
+[source,bash]
+----
+./gradlew :domain:check
+----
+
+=== Tests connectés
+
+[source,bash]
+----
+./gradlew :app:connectedAndroidTest
+----
+
