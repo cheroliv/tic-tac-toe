@@ -17,7 +17,9 @@ object Playground {
 
     fun launchLocalGame(): List<List<Int>> = launchLocalGame(TWO)
 
-    fun runConsoleLocalGame() = launchLocalGame().toMutableList().run {
+    fun runConsoleLocalGame() = launchLocalGame()
+        .toMutableList()
+        .run {
             do {
                 println("player one throw : ${firstPlayer()}")
                 println("player two throw : ${secondPlayer()}")

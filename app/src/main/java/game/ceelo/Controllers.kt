@@ -16,7 +16,7 @@ import game.ceelo.auth.LoginActivity
 import game.ceelo.databinding.ActivityGameBinding
 import game.ceelo.stats.ResultTableActivity
 
-private val diceImages: List<Int>
+private val diceImages
     get() = listOf(
         dice_face_one,
         dice_face_two,
@@ -126,14 +126,14 @@ private fun GameViewModel.playerThrow(
     )
 }
 
-private val GameActivity.binding: ActivityGameBinding
+private val GameActivity.binding
     get() = ActivityGameBinding.inflate(layoutInflater)
         .apply { setContentView(root) }
 
-private val ActivityGameBinding.resultUI: List<TextView>
+private val ActivityGameBinding.resultUI
     get() = listOf(localPlayerResult, computerResult)
 
-private val ActivityGameBinding.playersUI: List<List<ImageView>>
+private val ActivityGameBinding.playersUI
     get() = listOf(
         listOf(
             playerOneFirstDice,
@@ -152,7 +152,7 @@ private fun setTextViewResult(
     textViewResult: TextView,
     diceResult: GameResult,
     textViewVisibility: Int
-): TextView = textViewResult.apply {
+) = textViewResult.apply {
     visibility = textViewVisibility
     text = when (diceResult) {
         WIN -> WIN.toString()
